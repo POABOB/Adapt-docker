@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  adapt:
+    # image: 3wordchant/adaptauthoring:0.10.4
+    build: .
+    volumes:
+      - adaptdata:/adapt_authoring
+    links:
+      - adaptdb
+    depends_on:
+      - adaptdb
+    ports:
+      - "5000:5000"
+    # networks:
+    #   - internal
+    env_file: .env
+
+  adaptdb:
+    image: mongo:3.6
+    volumes:
+      - ./adaptdb:/data/db
+    ports:
+      - "27018:27017"
+#     networks:
+#       - internal
+
+volumes:
+  adaptdata:
+  # adaptdb:
+
+# networks:
+#   internal:
