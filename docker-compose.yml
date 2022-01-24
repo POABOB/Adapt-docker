@@ -12,22 +12,22 @@ services:
       - adaptdb
     ports:
       - "5000:5000"
-    # networks:
-    #   - internal
+    networks:
+      - internal
     env_file: .env
 
   adaptdb:
     image: mongo:3.6
     volumes:
       - ./adaptdb:/data/db
-    ports:
-      - "27018:27017"
-#     networks:
-#       - internal
+    # ports:
+    #   - "27018:27017"
+    networks:
+      - internal
 
 volumes:
   adaptdata:
   # adaptdb:
 
-# networks:
-#   internal:
+networks:
+  internal:

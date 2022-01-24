@@ -30,7 +30,7 @@ load_vars() {
 install_adapt() {
 	echo "No 'conf' dir found, running 'node install...'"
 	# 3wc: use `yes` to skip the dbPass and dbAuthSource prompts
-	yes "" | sudo node install --install Y \
+	yes "" | node install --install Y \
    	--authoringToolRepository https://github.com/adaptlearning/adapt_authoring.git \
 		--frameworkRepository https://github.com/adaptlearning/adapt_framework.git \
 		--frameworkRevision tags/v5.7.0 \
