@@ -35,7 +35,7 @@ install_adapt() {
 		--frameworkRepository https://github.com/adaptlearning/adapt_framework.git \
 		--frameworkRevision tags/v5.7.0 \
 		--serverPort "${PORT}" --serverName "${DOMAIN}" \
-		--dbHost "${DB_HOST}" --dbName "${DB_NAME}" --dbPort 27018 \
+		--dbHost "${DB_HOST}" --dbName "${DB_NAME}" --dbPort 27017 \
 		--dbUser "${DB_USER}" \
 		--useConnectionUri false \
 		--dataRoot data \
@@ -65,7 +65,7 @@ main() {
 #     echo "wait for mongo";
 #     sleep 3;
 # done;
-sleep 15;
+sleep 10;
 
 main
 
